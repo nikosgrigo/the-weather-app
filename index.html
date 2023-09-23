@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>The weather - Don't rain your day!</title>
     <link rel="stylesheet" href="main.css" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon" /> -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -22,13 +22,19 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container-fluid">
       <div class="logo"><img src="" />LOGO</div>
       <div class="row">
         <div class="main_section col-lg-7">
-          <div class="container">
+          <!-- <div class="container">
             <span class="temperature_span">20&deg;</span>
             <div class="general_info">
               <div class="location">London</div>
@@ -38,10 +44,26 @@
               <i class="bi bi-cloud-rain weather_icon"></i>
               <span class="weather_short_description">Rainy</span>
             </div>
-          </div>
+          </div> -->
         </div>
 
-        <div class="right_section overlay col-lg-5"></div>
+        <div class="right_section overlay col-lg-5">
+          <div class="search_section">
+            <div class="input-container">
+              <input type="text" id="input" required="" />
+              <label for="input" class="label">Enter Location</label>
+              <div class="underline"></div>
+            </div>
+            <button class="search_btn"><i class="bi bi-search"></i></button>
+          </div>
+
+          <div class="weather_details">
+            <!-- <h2>Weather details</h2>
+            <span class="cloudy">Cloudy: 57% </span>
+            <span class="wind">Wind : 8km/h</span>
+            <span class="humidity">Humidity: 80%</span> -->
+          </div>
+        </div>
       </div>
     </div>
     <script src="index.js"></script>
