@@ -1,15 +1,35 @@
 const API_KEY = "a6d9a688627f4387a5b81327232309";
 const BASE_URL = "https://api.weatherapi.com/v1/current.json";
 
-const getSearchInput = function () {
-  //pairnv katharizo to input kai to bazv sto url
+const search_btn = document.querySelector(".search_btn");
+const location_input_El = document.querySelector("#input");
+
+const getLocationFromSearchBar = function () {
+  let location_value = location_input_El.value.toLowerCase().trim();
+
+  if (location_value) {
+    fetchWeatherData(location_value);
+    location_input_El.value = "";
+    // displaySuccessMessage();
+  } else {
+    // displayErrorMessage();
+  }
 };
 
-const LOCATION = "athens";
-const AQI = "no";
+search_btn.addEventListener("click", getLocationFromSearchBar);
+location_input_El.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
 
-async function fetchWeatherData() {
-  const url = `${BASE_URL}?key=${API_KEY}&q=${LOCATION}&aqi=${AQI}`;
+    search_btn.click();
+  }
+});
+// ["click", "enter"].forEach((evt) =>
+//   element.addEventListener(evt, getLocationFromSearchBar, false)
+// );
+
+async function fetchWeatherData(location = "thessaloniki") {
+  const url = `${BASE_URL}?key=${API_KEY}&q=${location}`;
 
   try {
     const response = await fetch(url);
@@ -42,13 +62,14 @@ async function fetchWeatherData() {
     }
   } catch (error) {
     console.error("Error:", error);
+    // displayErrorMessage();
   }
 }
 
 fetchWeatherData();
 const renderHtml = function (weather) {
   let parentElement = document.querySelector(".main_section");
-  // parentElement.innerHTML = "";
+  parentElement.innerHTML = "";
 
   let htmlMarkup = ` <div class="container">
   <span class="temperature_span">${weather.temperature}&deg;</span>
@@ -57,13 +78,12 @@ const renderHtml = function (weather) {
     <div class="date">${weather.date}</div>
   </div>
   <div class="weather_info">
-  <i class="bi bi-cloud-rain weather_img"></i>
-
+   <img class='weather_img' src='${weather.icon}'> 
     <span class="weather_short_description">${weather.condition}</span>
   </div>
 </div>`;
 
-  /*   <img class='weather_img' src='${weather.icon}'> */
+  /*<i class="bi bi-cloud-rain weather_img"></i>*/
 
   parentElement.insertAdjacentHTML("afterbegin", htmlMarkup);
 
@@ -73,5 +93,6 @@ const renderHtml = function (weather) {
   <span class="humidity">Humidity: ${weather.humidity}%</span>`;
 
   parentElement = document.querySelector(".weather_details");
+  parentElement.innerHTML = "";
   parentElement.insertAdjacentHTML("afterbegin", htmlMarkup);
 };
