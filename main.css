@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background-image: url("liquid-cheese.svg");
+  background-image: url("./images/liquid-cheese.svg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -18,7 +18,9 @@ body {
   margin: 0;
 }
 
-.logo {
+.logo img {
+  width: 8rem;
+  height: auto;
   position: fixed;
   top: 3rem;
   left: 3rem;
@@ -30,7 +32,6 @@ body {
   justify-content: center;
   align-items: end;
   padding-bottom: 7rem;
-  backdrop-filter: blur(1.5px);
 }
 
 .main_section .container {
@@ -50,7 +51,7 @@ body {
   backdrop-filter: blur(200px);
   z-index: 100;
   transition: all 0.5s;
-  background-color: #798f82b4;
+  background-color: #7b9e89;
 }
 
 .temperature_span {
