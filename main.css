@@ -26,64 +26,35 @@ body {
   left: 3rem;
 }
 
-.main_section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  padding-bottom: 7rem;
+.date {
+  color: rgba(246, 246, 246, 0.8);
 }
 
-.main_section .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 3rem;
+.show {
+  opacity: 1;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  backdrop-filter: blur(200px);
-  z-index: 100;
-  transition: all 0.5s;
-  background-color: #7b9e89;
+.search_btn:hover {
+  background-color: #b8dcc7;
 }
 
 .temperature_span {
-  font-size: 9rem;
+  font-size: 5rem;
   font-weight: 600;
 }
 
 .location {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 450;
 }
 
 .date,
 .weather_short_description {
-  font-size: 1.3rem;
-}
-
-.date {
-  color: rgba(246, 246, 246, 0.8);
-}
-
-.weather_info {
-  display: flex;
-  flex-direction: column;
-}
-
-.weather_img {
-  font-size: 4rem;
+  font-size: 1.1rem;
 }
 
 .search_section {
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -91,61 +62,152 @@ body {
 }
 
 .error_message {
-  font-size: 15px;
-  margin-left: 10rem;
+  font-size: 13px;
+  margin-left: 1rem;
   opacity: 0;
   transition: opacity 1s ease-in;
   color: rgba(24, 49, 83, 0.881);
   letter-spacing: 0.1ch;
 }
 
-.show {
-  opacity: 1;
-}
-
 .search_btn {
   outline: none;
   border: none;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   border-radius: 20px;
-  margin-right: 70px;
-}
-
-.search_btn:hover {
-  background-color: #b8dcc7;
+  margin-right: 2rem;
 }
 
 .search_btn i {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .weather_details {
-  margin-top: 10rem;
-  margin-left: 8rem;
   justify-content: flex-start;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
+  margin-top: 4rem;
+  margin-left: 6rem;
   font-weight: 400;
   color: rgba(246, 246, 246, 0.6);
 }
 
 .weather_details h2 {
-  font-size: 40px;
   color: rgb(228, 228, 228);
+  font-size: 30px;
 }
 
 .weather_details_div {
   display: flex;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .weather_details_div span {
-  margin-left: 1rem;
   font-weight: 600;
   color: rgb(228, 228, 228);
+}
+
+@media only screen and (min-width: 600px) {
+  .main_section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 7rem;
+  }
+
+  .main_section .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(200px);
+    z-index: 100;
+    transition: all 0.5s;
+    background-color: #7b9e89;
+  }
+
+  .temperature_span {
+    font-size: 9rem;
+    font-weight: 600;
+  }
+
+  .location {
+    font-size: 4rem;
+    font-weight: 450;
+  }
+
+  .date,
+  .weather_short_description {
+    font-size: 1.3rem;
+  }
+
+  .search_section {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .error_message {
+    font-size: 15px;
+    margin-left: 10rem;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    color: rgba(24, 49, 83, 0.881);
+    letter-spacing: 0.1ch;
+  }
+
+  .search_btn {
+    outline: none;
+    border: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    margin-right: 70px;
+  }
+
+  .search_btn i {
+    font-size: 20px;
+  }
+
+  /*////////////////*/
+
+  .weather_details {
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .weather_details h2 {
+    font-size: 35px;
+  }
+
+  .weather_details_div {
+    display: flex;
+    font-size: 22px;
+  }
+
+  .weather_details_div span {
+    margin-left: 1rem;
+  }
 }
 
 /*-------------------------*/
